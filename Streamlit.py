@@ -40,7 +40,7 @@ with col1:
    X2 = st.slider("Cr (wt. %)", 14.86, 18.97)
    X3= st.slider("Mn (wt. %)", 0.01, 3.89)
    X4 = st.slider("Si (wt. %)", 0.01, 1.96)
-   X5 = st.slider("Co /100 (wt. %)", 0.00, 4.45)
+   X5 = st.slider("Co (wt. %)", 0.00, 4.45)
 	
 with col2:	
 
@@ -48,26 +48,26 @@ with col2:
    X7 = st.slider("Ni (wt. %)", 9.96, 14.04)
    X8=st.slider("C (wt. %)", 0.00, 0.13)	
    X9 = st.slider("N (wt. %)", 0.00, 0.13)
-   X10= st.slider("B /1000(wt. %)", 0.00, 5.70)
+   X10= st.slider("B /1000 (wt. %)", 0.00, 5.70)
 
 with col3:		
    X11 = st.slider("P /100 (wt. %)", 0.10, 4.00)
    X12 = st.slider("S /100 (wt. %)", 0.40, 1.90)
    X13= st.slider("Al (wt. %)", 0.00, 0.10)
    X14 = st.slider("Ti /100 (wt. %)", 0.00, 2.00)   
-   X15=st.slider("Nb (wt. %)", 0.00, 0.54)	
+   X15=st.slider("Nb /100 (wt. %)", 0.00, 1.00)	
 	
 with col4:	
-   X16 = st.slider("Ta (wt. %)", 0.00, 0.36)
-   X17= st.slider("Al (wt. %)", 0.00, 100.00)
-   X18 = st.slider("V (wt. %)", 0.00, 2.00)
-   X19 = st.slider("Mg (wt. %)", 0.00, 1.63)
+   X16 = st.slider("Ta /100 (wt. %)", 0.00, 2.00)
+   X17= st.slider("Pb /100 (wt. %)", 0.00, 2.00)
+   X18 = st.slider("Cu (wt. %)", 0.00, 4.47)
+   X19 = st.slider("Pre-irr. flue. x10^22(n/cm2)", 0.00, 3.86)
 	
 with col5:		
-   X20= st.slider("W (wt. %)", 0.00, 2.40)	
-   X21 = st.slider("Zr (wt. %)", 0.00, 0.10)  
-   X22=st.slider("Dose rate /1000 (dpa/s)", 0.000, 60.00)
-   X23 = st.slider("Temperature (K)", 393.5, 1013.5)
+   X20= st.slider("Irr. flue. x10^22(n/cm2)", 1.53, 14.00)	
+   X21 = st.slider("Temperature (C)", 376.00, 780.10)  
+   X22=st.slider("Stress (MPa)", 0.0, 403.0)
+   X23 = st.slider("Disl. Dens. x10^14(1/m2)", 1.50, 30.00)
 
 
 
@@ -101,7 +101,7 @@ cat_clf_n = CatBoostRegressor(n_estimators =n_estimators,learning_rate = learnin
 cat_clf_n.fit(X_train, y_train)
 
 
-Inputdata = [X1, X2, X3, X4, X5/100, X6, X7,X8, X9, X10, X11/1000, X12/100, X13/100, X14, X15, X16, X17,X18, X19, X20, X21, X22/1000, X23]
+Inputdata = [X1, X2, X3, X4, X5, X6, X7, X8, X9, X10/1000, X11/100, X12/100, X13, X14/100, X15/100, X16/100, X17/100,X18, X19, X20, X21, X22, X23*100000000000000]
 
 
 from numpy import asarray
