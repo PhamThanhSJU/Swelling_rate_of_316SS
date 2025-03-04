@@ -123,7 +123,7 @@ std_pred = np.std(predictions)
 puxgb = np.around(mean_pred, 3)
 puxgb_err = np.around(std_pred, 3)
 
-fc_pred2 = cat_clf_n.predict(Newdata)
+#fc_pred2 = cat_clf_n.predict(Newdata)
 
 st.subheader("Output variable")
 if st.button("Predict"):
