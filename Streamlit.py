@@ -137,4 +137,4 @@ if st.button("Predict"):
     time.sleep(1)
     my_bar.empty()
     st.success(f"Your predicted swelling rate (%) obtained from WERCS-FHO-CGB model is: {(puxgb)}")
-    st.success(f"The standard deviation (Uncertainty) (%) obtained from proposed model is: {(puxgb)}")
+    st.success(f"The standard deviation (Uncertainty) (%) obtained from proposed model is: {(puxgb_err)}")
