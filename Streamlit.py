@@ -85,7 +85,7 @@ y = df['Swell'].values
 X = scaler.fit_transform(X_ori)	
 from numpy import asarray
 
-Inputdata = [X1, X2, X3, X4, X5, X6, X8, X9, X10/1000, X11/100, X12/100, X13, X15/100, X17/100, X19, X20, X21, X22, X23*100000000000000]
+Inputdata = [X1, X2, X3, X4, X5, X6, X8, X9, X10/1000, X11/100, X12/100, X13, X15/100, X17/100, X19*10000000000000000000000, X20*10000000000000000000000, X21, X22, X23*100000000000000]
 
 X_predict = asarray([Inputdata])
 predictions = []
