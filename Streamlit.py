@@ -44,29 +44,23 @@ with col1:
 with col2:	
    X5 = st.slider("Co (wt. %)", 0.00, 4.45)
    X6= st.slider("Mo (wt. %)", 0.01, 4.93)
-   X7 = st.slider("Ni (wt. %)", 9.96, 14.04)
    X8=st.slider("C (wt. %)", 0.00, 0.13)
+   X9 = st.slider("N (wt. %)", 0.00, 0.13)
 	
 with col3:	
-   X9 = st.slider("N (wt. %)", 0.00, 0.13)
+   
    X10= st.slider("B /1000 (wt. %)", 0.00, 5.70)	
    X11 = st.slider("P /100 (wt. %)", 0.10, 4.00)
    X12 = st.slider("S /100 (wt. %)", 0.40, 1.90)
-	
+   X13= st.slider("Al (wt. %)", 0.00, 0.10)	
 with col4:	
-   X13= st.slider("Al (wt. %)", 0.00, 0.10)
-   X14 = st.slider("Ti /100 (wt. %)", 0.00, 2.00)   
    X15=st.slider("Nb /100 (wt. %)", 0.00, 1.00)	
-   X16 = st.slider("Ta /100 (wt. %)", 0.00, 2.00)
-	
-with col5:	
    X17= st.slider("Pb /100 (wt. %)", 0.00, 2.00)
-   X18 = st.slider("Cu (wt. %)", 0.00, 4.47)
-   X19 = st.slider("Pre-irr. flue. x10^22(n/cm2)", 0.00, 3.86)	
+   X19 = st.slider("Pre-irr. flue. x10^22(n/cm2)", 0.00, 3.86)		
+with col5:	
    X20= st.slider("Irr. flue. x10^22(n/cm2)", 1.53, 14.00)
-	
-with col6:	
    X21 = st.slider("Temperature (C)", 376.00, 780.10)  
+with col6:	
    X22=st.slider("Stress (MPa)", 0.0, 403.0)
    X23 = st.slider("Disl. Dens. x10^14(1/m2)", 1.50, 30.00)
 
@@ -83,15 +77,15 @@ from sklearn.preprocessing import MinMaxScaler
 scaler = MinMaxScaler()
 
 
-df = pd.read_csv('Swelling_data_316SS_Thanh_WERCS.csv')
+df = pd.read_csv('Swelling_data_316SS_Thanh_WERCS2.csv')
 # X_ori = df[['D','W','den','fc','E','L','C','P']].values
-X_ori = df[['Fe','Cr','Mn','Si','Co','Mo','Ni','C','N','B','P','S','Al','Ti','Nb','Ta','Pb','Cu','Pre-irr','Irr','Temp','Stre','Dis']].values
+X_ori = df[['Fe','Cr','Mn','Si','Co','Mo','C','N','B','P','S','Al','Nb','Pb','Pre-irr','Irr','Temp','Stre','Dis']].values
 y = df['Swell'].values
 
 X = scaler.fit_transform(X_ori)	
 from numpy import asarray
 
-Inputdata = [X1, X2, X3, X4, X5, X6, X7, X8, X9, X10/1000, X11/100, X12/100, X13, X14/100, X15/100, X16/100, X17/100,X18, X19, X20, X21, X22, X23*100000000000000]
+Inputdata = [X1, X2, X3, X4, X5, X6, X8, X9, X10/1000, X11/100, X12/100, X13, X15/100, X17/100, X19, X20, X21, X22, X23*100000000000000]
 
 X_predict = asarray([Inputdata])
 predictions = []
