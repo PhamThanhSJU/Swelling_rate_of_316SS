@@ -43,25 +43,25 @@ with col1:
 	
 with col2:	
    X5 = st.slider("Co (wt. %)", 0.00, 4.45)
-   X6= st.slider("Mo (wt. %)", 0.01, 4.93)
-   X8=st.slider("C (wt. %)", 0.00, 0.13)
+   X6 = st.slider("Mo (wt. %)", 0.01, 4.93)
+   X8 = st.slider("C (wt. %)", 0.00, 0.13)
    X9 = st.slider("N (wt. %)", 0.00, 0.13)
 	
 with col3:	
    
-   X10= st.slider("B /1000 (wt. %)", 0.00, 5.70)	
+   X10 = st.slider("B /1000 (wt. %)", 0.00, 5.70)	
    X11 = st.slider("P /100 (wt. %)", 0.10, 4.00)
    X12 = st.slider("S /100 (wt. %)", 0.40, 1.90)
-   X13= st.slider("Al (wt. %)", 0.00, 0.10)	
+   X13 = st.slider("Al (wt. %)", 0.00, 0.10)	
 with col4:	
-   X15=st.slider("Nb /100 (wt. %)", 0.00, 1.00)	
-   X17= st.slider("Pb /100 (wt. %)", 0.00, 2.00)
+   X15 = st.slider("Nb /100 (wt. %)", 0.00, 1.00)	
+   X17 = st.slider("Pb /100 (wt. %)", 0.00, 2.00)
    X19 = st.slider("Pre-irr. flue. x10^22(n/cm2)", 0.00, 3.86)		
 with col5:	
-   X20= st.slider("Irr. flue. x10^22(n/cm2)", 1.53, 14.00)
+   X20 = st.slider("Irr. flue. x10^22(n/cm2)", 1.53, 14.00)
    X21 = st.slider("Temperature (C)", 376.00, 780.10)  
 with col6:	
-   X22=st.slider("Stress (MPa)", 0.0, 403.0)
+   X22 = st.slider("Stress (MPa)", 0.0, 403.0)
    X23 = st.slider("Disl. Dens. x10^14(1/m2)", 1.50, 30.00)
 
 
@@ -92,7 +92,7 @@ predictions = []
   
 for i in range(1,4,1):
     count = i
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.05, random_state=(0+i))
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.03, random_state=(0+i))
 
     n_estimators = 502
     learning_rate = 0.223
