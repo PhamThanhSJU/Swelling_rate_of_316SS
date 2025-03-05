@@ -92,7 +92,7 @@ predictions = []
   
 for i in range(1,4,1):
     count = i
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.03, random_state=(0+i))
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.05, random_state=(0+i))
 
     n_estimators = 502
     learning_rate = 0.223
